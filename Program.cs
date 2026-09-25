@@ -32,7 +32,7 @@ public class Squad : IUnit
     }
     public void Attack()
     {
-        Console.WriteLine("\nOтряд атакует!");
+        Console.WriteLine($"\n{Name} атакует!");
         foreach (IUnit unit in units)
         {
             unit.Attack();
