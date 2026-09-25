@@ -5,21 +5,19 @@
 
 public class Warrior : IUnit
 {
-    private string Name;
 
     public void Attack()
     {
-        Console.WriteLine($"Воин {Name} атакует мечом!");
+        Console.WriteLine("Воин атакует мечом!");
     }
 }
 
 public class Mage : IUnit
 {
-    private string Name;
 
     public void Attack()
     {
-        Console.WriteLine($"Маг {Name} атакует огненным заклинанием!");
+        Console.WriteLine("Маг атакует огненным заклинанием!");
     }
 
 }
@@ -34,7 +32,7 @@ public class Squad : IUnit
     }
     public void Attack()
     {
-        Console.WriteLine("Второй отряд атакует!");
+        Console.WriteLine("\nOтряд атакует!");
         foreach (IUnit unit in units)
         {
             unit.Attack();
@@ -56,7 +54,12 @@ class Program
         
 
         Squad newsquad = new Squad("Второй отряд");
-        newsquad.Add(new Warrior());
         newsquad.Add(new Mage());
+        newsquad.Add(new Warrior());
+
+
+
+        mainsquad.Attack();
+        newsquad.Attack();        
     }
 }
